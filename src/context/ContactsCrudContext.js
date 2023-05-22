@@ -1,11 +1,11 @@
 import { createContext, useContext, useState } from "react";
 import api from "../api/contacts";
-import { uuid } from "uuidv4";
+import { v4 } from "uuid";
 
 const contactsCrudContext = createContext();
 
 export function ContactsCrudContextProvider({children}) {
-    const [contacts, setContacts] = useState([]);
+    const [contacts, setContacts] = useState([]); // This is used only in functional components. 
     const [contact, setContact] = useState([]);
     const [text, setText] = useState("");
     const [searchResults, setSearchResults] = useState([]);
@@ -20,7 +20,7 @@ export function ContactsCrudContextProvider({children}) {
 
   const addContactHandler = async (contact) => {
     const request = {
-      id: uuid(),
+      id: v4(),
       ...contact,
     };
     const response = await api.post("/contacts", request);
@@ -81,6 +81,8 @@ export function ContactsCrudContextProvider({children}) {
     )
 }
 
+
 export function useContactsCrud() {
+  //This useContext function is defined in the react framework. When given a context, it returns the currrent context value 
     return useContext(contactsCrudContext)
 }

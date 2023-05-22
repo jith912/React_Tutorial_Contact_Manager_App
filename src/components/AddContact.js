@@ -15,6 +15,7 @@ const AddContact = () => {
       alert("ALl the fields are mandatory!");
       return;
     }
+    console.log('inside add function');
     addContactHandler({name, email});
     setEmail("");
     setName("");
@@ -44,7 +45,7 @@ const AddContact = () => {
               onChange={(e) => setEmail(e.target.value )}
             />
           </div>
-          <button className="ui button blue">Add</button>
+          <button className="ui button blue" >Add</button>
         </form>
       </div>
     );

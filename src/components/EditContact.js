@@ -47,7 +47,7 @@ const EditContact = () =>  {
               onChange={(e) => setNewEmail(e.target.value)}
             />
           </div>
-          <button className="ui button blue">Update</button>
+          <button className="ui button blue" onClick={update}>Update</button>
         </form>
       </div>
     );

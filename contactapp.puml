@@ -1,0 +1,7 @@
+@startuml
+skinparam ComponentStyle rectangle 
+[App] .r.> [ContactList] : > uses
+[App] .d.> [AddContact] : > uses
+[App] .l.> [EditContact] : > uses
+[App] .u.> [ShowContact] : > uses
+@enduml
